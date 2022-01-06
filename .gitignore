@@ -1,2 +1,4 @@
 minilibx
 a.out
+.vscode
+mlx_init.c
