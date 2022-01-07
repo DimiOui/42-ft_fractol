@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 11:36:32 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/01/05 15:49:48 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/05 16:36:07 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(void)
 	void	*mlx_win;
 	t_data	img;
 	float	y;
+	//float	c;
 
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 800, 800, "Hello world!");
@@ -49,11 +50,10 @@ int	main(void)
 		y = 100;
 		while (y < 700)
 		{
-			my_mlx_pixel_put(&img, x, y, create_trgb(0, 0, (y*255)/700, (y*255)/700));
+			my_mlx_pixel_put(&img, x, y, create_trgb(0, (y*15)/700, (-y*157)/700, (x*88)/700));
 			y++;
 		}
 	}
-	printf("loop done\n");
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 }
