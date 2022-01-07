@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 11:36:32 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/01/05 16:36:07 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/07 11:45:02 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	main(void)
 	void	*mlx_win;
 	t_data	img;
 	float	y;
-	//float	c;
 
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 800, 800, "Hello world!");
