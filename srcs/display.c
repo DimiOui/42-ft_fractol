@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getcolors.c                                        :+:      :+:    :+:   */
+/*   display.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 13:05:18 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/01/03 13:09:24 by dpaccagn         ###   ########.fr       */
+/*   Created: 2022/01/17 14:34:18 by dimioui           #+#    #+#             */
+/*   Updated: 2022/01/17 16:41:31 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	create_trgb(int t, int r, int g, int b)
+#include "fractol.h"
+
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
-	return (t << 24 | r << 16 | g << 8 | b);
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
 }
+

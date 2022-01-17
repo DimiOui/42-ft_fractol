@@ -19,5 +19,9 @@
 		"titleBar.inactiveForeground": "#e7e7e799"
 	},
 	"peacock.color": "#ff3d00",
-	"peacock.remoteColor": "#34A853"
+	"peacock.remoteColor": "#34A853",
+	"files.associations": {
+		"fractol.h": "c",
+		"stdio.h": "c"
+	}
 }
