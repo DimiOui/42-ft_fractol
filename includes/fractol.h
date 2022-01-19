@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/17 16:44:03 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/19 12:25:37 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,11 @@ typedef struct s_complex {
 # include <math.h>
 # include <stdlib.h>
 
-int		mandelbrot(t_complex s, t_complex c, t_data *data);
+int		mandelbrot(t_complex s, t_complex c);
 int		kh_mouse(int x, int y);
 int		kh_keeb(int keycode, t_data *data);
 int		create_trgb(int hue);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	ft_fill_screen(t_data *data);
 
 #endif

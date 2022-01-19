@@ -46,9 +46,9 @@ RM			= rm -f
 
 CC			= cc
 
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror -g -fsanitize=address
 
-CPPFLAGS	= -I/usr/includes  -Iminilibx -Iincludes
+CPPFLAGS	= -I/usr/includes  -I minilibx -I includes
 
 LIBS		= ./libft/libft.a minilibx/libmlx_Linux.a -lXext -lX11 -lm
 

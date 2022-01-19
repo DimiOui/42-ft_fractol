@@ -3,56 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   colors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 13:05:18 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/01/17 16:04:44 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/19 13:06:03 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	get_red(int hue)
+static int	ft_getr(int hue)
 {
-	int	red;
+	int	r;
 
 	if (hue <= 16 || hue > 84)
-		red = 255;
+		r = 255;
 	else if (hue <= 33)
-		red = 255 - ((255 * (hue - 16)) / 16);
+		r = 255 - ((255 * (hue - 16)) / 16);
 	else if (hue <= 66)
-		red = 0;
+		r = 0;
 	else
-		red = 255 * (hue - 66) / 16;
-	return (red);
+		r = 255 * (hue - 66) / 16;
+	return (r);
 }
 
-static int	get_green(int hue)
+static int	ft_getg(int hue)
 {
-	int	green;
+	int	g;
 
 	if (hue <= 16)
-		green = (255 * hue) / 16;
+		g = (255 * hue) / 16;
 	else if (hue <= 50)
-		green = 255;
+		g = 255;
 	else if (hue <= 66)
-		green = 255 - (255 * (hue - 50) / 16);
+		g = 255 - (255 * (hue - 50) / 16);
 	else
-		green = 0;
-	return (green);
+		g = 0;
+	return (g);
 }
 
-static int	get_blue(int hue)
+static int	ft_getb(int hue)
 {
-	int	blue;
+	int	b;
 
 	if (hue <= 33)
-		blue = 0;
+		b = 0;
 	else if (hue <= 50)
-		blue = (255 * (hue - 33) / 16);
+		b = (255 * (hue - 33) / 16);
 	else if (hue <= 84)
-		blue = 255;
+		b = 255;
 	else
-		blue = 255 - (255 * (hue - 84) / 16);
-	return (blue);
+		b = 255 - (255 * (hue - 84) / 16);
+	return (b);
 }
 
 int	create_trgb(int hue)
@@ -61,8 +61,8 @@ int	create_trgb(int hue)
 	int	g;
 	int	b;
 
-	r = get_red(hue);
-	g = get_green(hue);
-	b = get_blue(hue);
+	r = ft_getr(hue);
+	g = ft_getg(hue);
+	b = ft_getb(hue);
 	return (0 << 24 | r << 16 | g << 8 | b);
 }
