@@ -6,14 +6,14 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/19 12:25:37 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/19 13:48:24 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define MAX_ITER 50
+# define MAX_ITER 100
 # define RES_X 800
 # define RES_Y 800
 # define LEFT 65361

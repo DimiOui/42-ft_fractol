@@ -6,18 +6,19 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:34:18 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/19 13:05:03 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/19 13:13:11 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_data *data, int x, int y, int col)
 {
 	char	*dst;
 
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	dst = data->addr + (y * data->line_length + x
+			* (data ->bits_per_pixel / 8));
+	*(unsigned int *)dst = col;
 }
 
 void	ft_fill_screen(t_data *data)
@@ -37,7 +38,7 @@ void	ft_fill_screen(t_data *data)
 			c.y = j;
 			z.x = 0;
 			z.y = 0;
-			my_mlx_pixel_put(data, i, j, create_trgb(mandelbrot(z, c)));
+			my_mlx_pixel_put(data, i, j, mandelbrot(z,c));
 			j++;
 		}
 		i++;

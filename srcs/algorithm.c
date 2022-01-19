@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:17:46 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/19 13:05:21 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/19 14:04:59 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	mandelbrot(t_complex z, t_complex c)
 	float	square_y;
 	int		iter;
 
-	c.x = (2.25 * c.x )/ 800 - 2;
+	c.x = (2.25 * c.x) / 800 - 1.75;
 	c.y = (2 * c.y) / 800 - 1;
 	square_x = z.x * z.x;
 	square_y = z.y * z.y;
