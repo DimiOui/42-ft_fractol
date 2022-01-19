@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:34:51 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/19 12:45:14 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/19 14:06:37 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,3 @@ int	main(void)
 	mlx_hook(data->mlx_win, 2, 1L<<0, kh_keeb, &data);
 	mlx_loop(data->mlx);
 }
-
-// definir couleurs blanc et noir (noir max_iter et blanc le reste)
-// init mlx window 800x800
-// -2/2 sur les x / -2/2 sur les y (gérer le zoom)
-// faire pixel put et prendre en parametre le mandelbrot appliquée au pixelput
-// mlx img
