@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:17:46 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/19 14:04:59 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/19 14:26:38 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ static int	coloring(int val)
 	return (create_trgb(nval));
 }
 
+static int	cardioid_check(float x, float y)
+{
+	float	q;
+
+	q = (x * x) + (y * y) - .5*x + .0625;
+	if (((q * q) + (q * x) - .25 * q) <= .25 * y * y)
+		return (1);
+	return (0);
+}
+
 int	mandelbrot(t_complex z, t_complex c)
 {
 	float	square_x;
@@ -33,6 +43,8 @@ int	mandelbrot(t_complex z, t_complex c)
 	square_x = z.x * z.x;
 	square_y = z.y * z.y;
 	iter = 0;
+	if (cardioid_check(c.x, c.y))
+		return (0);
 	while ((square_x + square_y)<= 4 && iter < MAX_ITER)
 	{
 		z.y = c.y + (z.x + z.x) * z.y;
