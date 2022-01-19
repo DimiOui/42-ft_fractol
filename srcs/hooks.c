@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:18:41 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/17 16:41:52 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/19 15:19:36 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+int	kh_mousezoom(int keycode, t_data *data)
+{
+	if (keycode == L_CLICK)
+	{
+		data->zoom *= 1.25;
+	}
+	else if(keycode == R_CLICK)
+	{
+		data->zoom /= 1.25;
+	}
+	ft_fill_screen(data);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->img, 0, 0);
+	return (0);
+}
 
 int	kh_mouse(int x, int y)
 {
