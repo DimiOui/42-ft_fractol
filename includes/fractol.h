@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/20 11:57:58 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/20 13:51:45 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ typedef struct s_data {
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-	int		offset_x;
-	int		offset_y;
 	void	*mlx;
 	void	*mlx_win;
 	float	zoom;
 	float	cx;
 	float	cy;
+	int		xpos;
+	int		ypos;
 }	t_data;
 
 typedef struct s_complex {

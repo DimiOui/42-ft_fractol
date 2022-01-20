@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:34:51 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/19 16:28:55 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/20 14:00:31 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_init_mlx(t_data *data)
 	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel,
 					&data->line_length, &data->endian);
 	data->zoom = 1;
+	data->xpos = 0;
+	data->ypos = 0;
 }
 
 int	main(void)
