@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:17:46 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/19 14:26:38 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:21:21 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	mandelbrot(t_complex z, t_complex c)
 	float	square_y;
 	int		iter;
 
-	c.x = (2.25 * c.x) / 800 - 1.75;
-	c.y = (2 * c.y) / 800 - 1;
+	c.x = (2.25 * c.x) / RES_X - 1.75;
+	c.y = (2 * c.y) / RES_Y - 1;
 	square_x = z.x * z.x;
 	square_y = z.y * z.y;
 	iter = 0;

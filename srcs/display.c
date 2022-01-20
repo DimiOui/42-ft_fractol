@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:34:18 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/20 13:57:31 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:01:40 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	ft_fill_screen(t_data *data)
 		j = 0;
 		while (j < RES_Y)
 		{
-			c.x = i * data->zoom;
-			c.y = j * data->zoom;
+			c.x = data->xpos + (i * data->zoom);
+			c.y = data->ypos + (j * data->zoom);
 			z.x = 0;
 			z.y = 0;
 			my_mlx_pixel_put(data, i, j, mandelbrot(z,c));

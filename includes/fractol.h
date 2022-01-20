@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/20 13:51:45 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:12:16 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ typedef struct s_data {
 	void	*mlx;
 	void	*mlx_win;
 	float	zoom;
-	float	cx;
-	float	cy;
-	int		xpos;
-	int		ypos;
+	long double	cx;
+	long double	cy;
+	float	ypos;
+	float	xpos;
 }	t_data;
 
 typedef struct s_complex {
-	float	x;
-	float	y;
+	long double	x;
+	long double	y;
 }	t_complex;
 
 # include <mlx.h>
