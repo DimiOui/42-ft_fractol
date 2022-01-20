@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/19 15:08:43 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/20 11:57:58 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
 # define L_CLICK 1
-# define R_CLICK 2
+# define R_CLICK 3
 
 typedef struct s_data {
 	void	*img;
@@ -54,8 +54,8 @@ typedef struct s_complex {
 # include <stdlib.h>
 
 int		mandelbrot(t_complex s, t_complex c);
-int		kh_mouse(int x, int y);
-int		kh_mousezoom(int keycode, t_data *data);
+//int		kh_mouse(int x, int y);
+int		kh_mousezoom(int keycode, int x, int y, t_data *data);
 int		kh_keeb(int keycode, t_data *data);
 int		create_trgb(int hue);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);

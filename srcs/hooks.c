@@ -6,32 +6,31 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:18:41 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/19 15:19:36 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/20 11:58:12 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	kh_mousezoom(int keycode, t_data *data)
+int	kh_mousezoom(int keycode, int x, int y, t_data *data)
 {
+	(void) x;
+	(void) y;
+
 	if (keycode == L_CLICK)
-	{
-		data->zoom *= 1.25;
-	}
-	else if(keycode == R_CLICK)
-	{
 		data->zoom /= 1.25;
-	}
+	else if (keycode == R_CLICK)
+		data->zoom *= 1.25;
 	ft_fill_screen(data);
 	mlx_put_image_to_window(data->mlx, data->mlx_win, data->img, 0, 0);
 	return (0);
 }
 
-int	kh_mouse(int x, int y)
+/*int	kh_mouse(int x, int y)
 {
 	printf("xpos: %d, ypos: %d\n", x, y);
 	return (0);
-}
+}*/
 
 int	kh_keeb(int keycode, t_data *data)
 {

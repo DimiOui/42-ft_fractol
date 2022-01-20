@@ -1,6 +1,6 @@
 define building
 	@echo -n "$(shell tput setaf 6)Building $1 $(shell tput sgr0)"
-	@make -sC $1 > /dev/null
+	@make -sC $1 > /dev/null 2> /dev/null
 	@echo "$(shell tput bold)$(shell tput setaf 2)√$(shell tput sgr0)"
 endef
 
@@ -11,8 +11,8 @@ define compiling
 endef
 
 define finishing
-	@echo -n "$(shell tput bold)$(shell tput setaf 2)Compiling $1 $(shell tput sgr0)"
-	@$(CC) $(CFLAGS) $(CPPFLAGS) $(OBJS) -o $(NAME) $(LIBS)
+	@echo -n "$(shell tput bold)$(shell tput setaf 2)Finishing $1 $(shell tput sgr0)"
+	@$(CC) $(CFLAGS) $(CPPFLAGS) $(OBJS) -o $(NAME) $(LIBS) > /dev/null
 	@echo "$(shell tput bold)$(shell tput setaf 2)√$(shell tput sgr0)"
 endef
 
