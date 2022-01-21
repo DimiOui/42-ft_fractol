@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:17:46 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/21 16:02:51 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/21 16:59:51 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ int	julia(t_complex z, t_complex c)
 	long double	square_y;
 	int			iter;
 
-	z.x = (2.25 * z.x) / RES_X - 1.75;
-	z.y = (2 * z.y) / RES_Y - 1;
+	z.x = (2.25 * z.x) / RES_X;
+	z.y = (2 * z.y) / RES_Y;
 	square_x = z.x * z.x;
 	square_y = z.y * z.y;
 	iter = 0;

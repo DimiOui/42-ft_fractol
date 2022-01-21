@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:34:18 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/21 16:03:06 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/21 16:56:02 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-void	ft_fill_screen(t_data *data)
+void	ft_fill_screen(t_data *data, int (*f)(t_complex, t_complex))
 {
 	float	i;
 	float	j;
@@ -34,11 +34,21 @@ void	ft_fill_screen(t_data *data)
 		j = 0;
 		while (j < RES_Y)
 		{
-			c.x = data->xpos + (i * data->zoom);
-			c.y = data->ypos + (j * data->zoom);
-			z.x = 0;
-			z.y = 0;
-			my_mlx_pixel_put(data, i, j, mandelbrot(z,c));
+			if (!ft_strncmp(data->fractal, "mandelbrot", 11))
+			{
+				c.x = data->xpos + (i * data->zoom);
+				c.y = data->ypos + (j * data->zoom);
+				z.x = 0;
+				z.y = 0;
+			}
+			else if (!ft_strncmp(data->fractal, "julia", 6))
+			{
+				z.x = data->xpos + (i * data->zoom);
+				z.y = data->ypos + (j * data->zoom);
+				c.x = 0;
+				c.y = 0;
+			}
+			my_mlx_pixel_put(data, i, j, f(z,c));
 			j++;
 		}
 		i++;

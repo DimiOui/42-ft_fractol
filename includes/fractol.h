@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/21 16:05:48 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/21 16:50:07 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define R_CLICK 3
 
 typedef struct s_data {
+	char	*fractal;
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -52,12 +53,15 @@ typedef struct s_complex {
 # include <stddef.h>
 # include <math.h>
 # include <stdlib.h>
+# include "libft.h"
 
 int		mandelbrot(t_complex s, t_complex c);
 int		kh_mousezoom(int keycode, int x, int y, t_data *data);
 int		kh_keeb(int keycode, t_data *data);
 int		create_trgb(int hue);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-void	ft_fill_screen(t_data *data);
+void	ft_fill_screen(t_data *data, int (*f)(t_complex, t_complex));
+void	draw_fractal(t_data *data);
+int		julia(t_complex z, t_complex c);
 
 #endif
