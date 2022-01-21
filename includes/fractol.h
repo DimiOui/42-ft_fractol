@@ -6,14 +6,14 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/20 16:12:16 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/21 12:24:19 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define MAX_ITER 100
+# define MAX_ITER 500
 # define RES_X 800
 # define RES_Y 800
 # define LEFT 65361

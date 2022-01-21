@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:17:46 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/20 16:21:21 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/21 12:24:11 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static int	cardioid_check(float x, float y)
 
 int	mandelbrot(t_complex z, t_complex c)
 {
-	float	square_x;
-	float	square_y;
+	long double	square_x;
+	long double	square_y;
 	int		iter;
 
 	c.x = (2.25 * c.x) / RES_X - 1.75;

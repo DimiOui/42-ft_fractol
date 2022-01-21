@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:34:51 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/20 15:56:15 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/21 12:25:01 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(void)
 	t_data	data;
 
 	ft_init_mlx(&data);
-	//mlx_hook(data.mlx_win, 6, 1L<<6, kh_mouse, &data);
 	mlx_hook(data.mlx_win, 4, 1L<<2, kh_mousezoom, &data);
 	mlx_hook(data.mlx_win, 2, 1L<<0, kh_keeb, &data);
 	ft_fill_screen(&data);

@@ -6,17 +6,11 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:18:41 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/20 16:19:12 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/21 12:25:03 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-/*int	kh_mouse(int x, int y)
-{
-	printf("xpos: %d, ypos: %d\n", x, y);
-	return (0);
-}*/
 
 int	kh_mousezoom(int keycode, int x, int y, t_data *data)
 {
