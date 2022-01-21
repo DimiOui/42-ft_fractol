@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/21 12:24:19 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/21 16:05:48 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ typedef struct s_complex {
 # include <stdlib.h>
 
 int		mandelbrot(t_complex s, t_complex c);
-//int		kh_mouse(int x, int y);
 int		kh_mousezoom(int keycode, int x, int y, t_data *data);
 int		kh_keeb(int keycode, t_data *data);
 int		create_trgb(int hue);
