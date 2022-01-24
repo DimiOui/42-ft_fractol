@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:34:18 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 13:01:44 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 14:09:15 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ void	ft_fill_screen(t_data *data, int (*f)(t_complex, t_complex))
 		j = 0;
 		while (j++ < RES_Y)
 		{
-			t = (!(ft_strncmp(data->fractal, "mandelbrot", 11)));
+			t = (!ft_strncmp(data->fractal, "mandelbrot", 11));
 			c.x = t * (data->xpos + (i * data->zoom)) + (1 - t) * (data->cx);
 			c.y = t * (data->ypos + (j * data->zoom)) + (1 - t) * (data->cy);
-			z.x = (1 - t) * data->xpos + (i * data->zoom);
-			z.y = (1 - t) * data->ypos + (j * data->zoom);
+			z.x = (1 - t) * (data->xpos + (i * data->zoom));
+			z.y = (1 - t) * (data->ypos + (j * data->zoom));
 			my_mlx_pixel_put(data, i, j, f(z, c));
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:18:41 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 12:31:55 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 14:02:26 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,15 @@ int	kh_keeb(int keycode, t_data *data)
 		free(data->mlx);
 		exit(0);
 	}
+	else if (keycode == LEFT)
+		data->xpos -= 25 / data->zoom;
+	else if (keycode == UP)
+		data->ypos -= 25 / data->zoom;
+	else if (keycode == RIGHT)
+		data->xpos += 25 / data->zoom;
+	else if (keycode == DOWN)
+		data->ypos += 25 / data->zoom;
+	draw_fractal(data);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->img, 0, 0);
 	return (0);
 }

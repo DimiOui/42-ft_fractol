@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:34:51 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 12:29:45 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 14:19:54 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,21 @@
 
 void	draw_fractal(t_data *data)
 {
-	if (!ft_strncmp(data->fractal, "mandelbrot", 11))
+	if (!ft_strncmp(data->fractal, "mandelbrot", 10))
 		ft_fill_screen(data, &mandelbrot);
-	else if (!ft_strncmp(data->fractal, "julia", 6))
+	else if (!ft_strncmp(data->fractal, "julia", 5))
 		ft_fill_screen(data, &julia);
 	else if (!ft_strncmp(data->fractal, "choufleur", 9))
 		ft_fill_screen(data, &choufleur);
+}
+
+int	param_true(char *s)
+{
+	if (!ft_strncmp(s, "mandelbrot", 12)
+		|| !ft_strncmp(s, "julia", 6)
+		|| !ft_strncmp(s, "choufleur", 10))
+		return (1);
+	return (0);
 }
 
 void	ft_init_mlx(t_data *data)
@@ -43,7 +52,7 @@ int	main(int ac, char **av)
 {
 	t_data	data;
 
-	if (ac != 2)
+	if (ac != 2 || !param_true(av[1]))
 	{
 		ft_putstr_fd("Available parameters:\n", 2);
 		ft_putstr_fd("\tmandelbrot\n", 2);

@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 12:35:17 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 14:00:57 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 # define ZOOM_IN 4
 # define ZOOM_OUT 5
 # define L_CLICK 1
+# define LEFT 65361
+# define RIGHT 65363
+# define UP 65362
+#define DOWN 65364
 
 # include <mlx.h>
 # include <stdio.h>
