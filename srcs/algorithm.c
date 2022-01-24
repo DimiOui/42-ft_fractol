@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:17:46 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/21 17:05:05 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/24 10:42:43 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,14 @@ int	mandelbrot(t_complex z, t_complex c)
 	long double	square_y;
 	int			iter;
 
-	c.x = (2 * c.x) / RES_X - 1.5;
-	c.y = (2 * c.y) / RES_Y - 1;
 	square_x = z.x * z.x;
 	square_y = z.y * z.y;
 	iter = 0;
+	if (iter == 0)
+	{
+		c.x = (2 * c.x) / RES_X - 1.5;
+		c.y = (2 * c.y) / RES_Y - 1;
+	}
 	if (cardioid_check(c.x, c.y))
 		return (0);
 	while ((square_x + square_y)<= 4 && iter < MAX_ITER)
@@ -79,9 +82,10 @@ int	julia(t_complex z, t_complex c)
 	long double	square_x;
 	long double	square_y;
 	int			iter;
-
-	z.x = (4 * z.x) / RES_X;
-	z.y = (4 * z.y) / RES_Y;
+	//change here
+	z.x = (z.x) / RES_X;
+	z.y = (z.y) / RES_Y;
+	c.x = .285;
 	square_x = z.x * z.x;
 	square_y = z.y * z.y;
 	iter = 0;
