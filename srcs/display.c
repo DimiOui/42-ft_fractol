@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:34:18 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 10:36:34 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 12:23:00 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ void	ft_fill_screen(t_data *data, int (*f)(t_complex, t_complex))
 				z.x = 0;
 				z.y = 0;
 			}
-			else if (!ft_strncmp(data->fractal, "julia", 6))
+			else
 			{
 				z.x = data->xpos + (i * data->zoom);
 				z.y = data->ypos + (j * data->zoom);
-				c.x = 0;
-				c.y = 0;
+				c.x = data->cx;
+				c.y = data->cy;
 			}
 			my_mlx_pixel_put(data, i, j, f(z,c));
 			j++;

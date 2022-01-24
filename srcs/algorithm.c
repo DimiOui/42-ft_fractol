@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:17:46 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 10:42:43 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 12:18:53 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,6 @@ static int	coloring(int val)
 	nval = (200 * val) / MAX_ITER;
 	if (val == MAX_ITER)
 		return (0);
-	/*else if (val <=50)
-		return (0xa2f70);
-	else if (val <=100)
-		return (0xd4c00b);
-	else if (val <=150)
-		return (0xeba400);
-	else if (val <=200)
-		return (0xd4670b);
-	else if (val <=250)
-		return (0xf70cf4);
-	else if (val <=300)
-		return (0x670bd4);
-	else if (val <=350)
-		return (0x0114eb);
-	else if (val <=400)
-		return (0x0b86d4);
-	else if (val <=450)
-		return (0x00f5d0);*/
 	return (create_trgb(nval));
 }
 
@@ -79,16 +61,18 @@ int	mandelbrot(t_complex z, t_complex c)
 
 int	julia(t_complex z, t_complex c)
 {
-	long double	square_x;
-	long double	square_y;
+	float	square_x;
+	float	square_y;
 	int			iter;
-	//change here
-	z.x = (z.x) / RES_X;
-	z.y = (z.y) / RES_Y;
-	c.x = .285;
+
+	iter = 0;
+	if (iter == 0)
+	{
+		z.x = (2 * z.x) / RES_X - 1;
+		z.y = (2 * z.y) / RES_Y - 1;
+	}
 	square_x = z.x * z.x;
 	square_y = z.y * z.y;
-	iter = 0;
 	while ((square_x + square_x) <= 4 && iter < MAX_ITER)
 	{
 		z.y = c.y + (z.x + z.x) * z.y;
@@ -98,4 +82,9 @@ int	julia(t_complex z, t_complex c)
 		iter++;
 	}
 	return (coloring(iter));
+}
+
+int	choufleur(t_complex z, t_complex c)
+{
+	return (julia(z, c));
 }

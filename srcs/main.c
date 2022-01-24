@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:34:51 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/21 16:50:39 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/24 12:22:07 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	draw_fractal(t_data *data)
 		ft_fill_screen(data, &mandelbrot);
 	else if (!ft_strncmp(data->fractal, "julia", 6))
 		ft_fill_screen(data, &julia);
+	else if (!ft_strncmp(data->fractal, "choufleur", 9))
+		ft_fill_screen(data, &choufleur);
 }
 
 void	ft_init_mlx(t_data *data)
@@ -30,6 +32,11 @@ void	ft_init_mlx(t_data *data)
 	data->zoom = 1;
 	data->xpos = 0;
 	data->ypos = 0;
+	data->cx = .285;
+	if(!ft_strncmp(data->fractal, "choufleur", 9))
+		data->cy = 0;
+	else
+		data->cy = .285;
 }
 
 int	main(int ac, char **av)
@@ -41,6 +48,7 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Available parameters:\n", 2);
 		ft_putstr_fd("\tmandelbrot\n", 2);
 		ft_putstr_fd("\tjulia\n", 2);
+		ft_putstr_fd("\tchoufleur\n", 2);
 		return (4);
 	}
 	data.fractal = av[1];
