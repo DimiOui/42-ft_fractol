@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 14:00:57 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 14:54:53 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define LEFT 65361
 # define RIGHT 65363
 # define UP 65362
-#define DOWN 65364
+# define DOWN 65364
 
 # include <mlx.h>
 # include <stdio.h>
