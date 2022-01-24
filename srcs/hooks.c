@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:18:41 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 12:07:43 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 12:31:55 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int	kh_mousezoom(int keycode, int x, int y, t_data *data)
 {
-	(void)		x;
-	(void)		y;
-
+	(void)x;
+	(void)y;
 	if (keycode == ZOOM_IN)
 	{
 		data->zoom /= 1.25;
@@ -32,9 +31,8 @@ int	kh_mousezoom(int keycode, int x, int y, t_data *data)
 	else if (keycode == L_CLICK)
 	{
 		data->cx = 2 * ((float)x - RES_X / 2) / RES_X;
-		data->cy = 2 * ((float)y - RES_Y / 2) /RES_Y;
+		data->cy = 2 * ((float)y - RES_Y / 2) / RES_Y;
 	}
-
 	draw_fractal(data);
 	mlx_put_image_to_window(data->mlx, data->mlx_win, data->img, 0, 0);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:34:51 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 12:22:07 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 12:29:45 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	ft_init_mlx(t_data *data)
 	data->mlx_win = mlx_new_window(data->mlx, RES_X, RES_Y, "Hello world!");
 	data->img = mlx_new_image(data->mlx, RES_X, RES_Y);
 	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel,
-					&data->line_length, &data->endian);
+			&data->line_length, &data->endian);
 	data->zoom = 1;
 	data->xpos = 0;
 	data->ypos = 0;
 	data->cx = .285;
-	if(!ft_strncmp(data->fractal, "choufleur", 9))
+	if (!ft_strncmp(data->fractal, "choufleur", 9))
 		data->cy = 0;
 	else
 		data->cy = .285;
@@ -53,8 +53,8 @@ int	main(int ac, char **av)
 	}
 	data.fractal = av[1];
 	ft_init_mlx(&data);
-	mlx_hook(data.mlx_win, 4, 1L<<2, kh_mousezoom, &data);
-	mlx_hook(data.mlx_win, 2, 1L<<0, kh_keeb, &data);
+	mlx_hook(data.mlx_win, 4, 1L << 2, kh_mousezoom, &data);
+	mlx_hook(data.mlx_win, 2, 1L << 0, kh_keeb, &data);
 	draw_fractal(&data);
 	mlx_put_image_to_window(data.mlx, data.mlx_win, data.img, 0, 0);
 	mlx_loop(data.mlx);

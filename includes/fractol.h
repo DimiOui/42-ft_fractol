@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 10:01:58 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 12:20:12 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 12:35:17 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@
 # define ZOOM_IN 4
 # define ZOOM_OUT 5
 # define L_CLICK 1
+
+# include <mlx.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stddef.h>
+# include <math.h>
+# include <stdlib.h>
+# include "libft.h"
 
 typedef struct s_data {
 	char	*fractal;
@@ -41,14 +49,6 @@ typedef struct s_complex {
 	long double	x;
 	long double	y;
 }	t_complex;
-
-# include <mlx.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <stddef.h>
-# include <math.h>
-# include <stdlib.h>
-# include "libft.h"
 
 int		mandelbrot(t_complex s, t_complex c);
 int		kh_mousezoom(int keycode, int x, int y, t_data *data);
