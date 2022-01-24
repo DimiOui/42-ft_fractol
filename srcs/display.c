@@ -6,7 +6,7 @@
 /*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:34:18 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 12:41:09 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/24 12:50:20 by dpaccagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	ft_fill_screen(t_data *data, int (*f)(t_complex, t_complex))
 			}
 			else
 			{
-				z.x = data->xpos + (i * data->zoom);
-				z.y = data->ypos + (j * data->zoom);
 				c.x = data->cx;
 				c.y = data->cy;
+				z.x = data->xpos + (i * data->zoom);
+				z.y = data->ypos + (j * data->zoom);
 			}
 			my_mlx_pixel_put(data, i, j, f(z, c));
 		}
