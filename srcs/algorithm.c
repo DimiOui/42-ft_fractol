@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 15:17:46 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 12:30:29 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/27 11:43:06 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ int	mandelbrot(t_complex z, t_complex c)
 
 int	julia(t_complex z, t_complex c)
 {
-	float	square_x;
-	float	square_y;
-	int		iter;
+	long double	square_x;
+	long double	square_y;
+	int			iter;
 
 	iter = 0;
 	if (iter == 0)
