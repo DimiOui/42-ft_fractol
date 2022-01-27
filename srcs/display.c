@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:34:18 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/24 14:09:15 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/01/27 12:27:16 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 void	ft_fill_screen(t_data *data, int (*f)(t_complex, t_complex))
 {
-	float		i;
-	float		j;
-	t_complex	c;
-	t_complex	z;
-	int			t;
+	long double		i;
+	long double		j;
+	t_complex		c;
+	t_complex		z;
+	int				t;
 
 	i = 0;
 	while (i++ < RES_X)
