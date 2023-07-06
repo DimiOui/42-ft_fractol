@@ -12,7 +12,7 @@ Fractol is a project that allows you to generate and visualize various fractal p
 - Pan across the fractal space to navigate through the patterns.
 - Interact with the Julia set by clicking on the screen.
 - Adjust the color palette to customize the visualization.
-- 
+
 ## Installation
 
 1. Clone the repository to your local machine.
